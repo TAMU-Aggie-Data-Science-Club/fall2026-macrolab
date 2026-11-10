@@ -1,0 +1,3 @@
+model,MAE,RMSE,R2
+baseline_train,2.0037,2.5339,0.9978
+baseline_test,6.7149,9.4873,0.9889
