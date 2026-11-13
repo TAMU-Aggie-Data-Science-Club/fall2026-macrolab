@@ -1,0 +1,10 @@
+{
+  "predictors": [
+    "hpi"
+  ],
+  "target": "actual_future",
+  "intercept": 0.5350458397680159,
+  "coefficients": [
+    1.005312532213706
+  ]
+}
