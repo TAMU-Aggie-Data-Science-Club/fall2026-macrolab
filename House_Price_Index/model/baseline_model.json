@@ -1,0 +1,5 @@
+{
+  "type": "persistence",
+  "rule": "predicted future HPI = most recently observed HPI",
+  "horizon": "3 months (1 quarterly row)"
+}

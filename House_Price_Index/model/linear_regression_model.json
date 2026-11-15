@@ -3,8 +3,8 @@
     "hpi"
   ],
   "target": "actual_future",
-  "intercept": 0.5350458397680159,
+  "intercept": 0.5350458397679535,
   "coefficients": [
-    1.005312532213706
+    1.0053125322137062
   ]
 }

@@ -1,0 +1,4 @@
+model,MAE,RMSE,R2
+Persistence baseline,6.7149,9.4873,0.9889
+Linear regression,4.9411,8.0446,0.992
+Regression vs baseline (% change),26.4153,15.2063,0.0031
