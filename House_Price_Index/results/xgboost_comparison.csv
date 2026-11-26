@@ -1,0 +1,5 @@
+model,MAE,RMSE,R2
+Persistence baseline,6.7149,9.4873,0.9889
+Linear regression,4.9411,8.0446,0.992
+XGBoost (hpi -> future hpi),137.501,164.3284,-2.3349
+XGBoost (growth features -> change),5.0626,8.2066,0.9917
