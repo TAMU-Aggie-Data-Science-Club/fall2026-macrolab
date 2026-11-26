@@ -1,0 +1,18 @@
+XGBoost Regressor Model Performance Summary
+
+1. Metric Breakdown & What They Represent
+
+Mean Absolute Error (MAE): 528.97
+What it represents: The average absolute difference between the model's predictions and the actual future target values. It measures average prediction error magnitude without considering direction.
+Implication: On average, the XGBoost model's 3-month-ahead predictions are off by approximately 529 units of the TXNA index.
+Root Mean Squared Error (RMSE): 608.24
+What it represents: The square root of the average squared differences between predictions and actuals. Because errors are squared before averaging, RMSE penalizes larger errors more heavily than MAE.
+Implication: The RMSE (608.24) is higher than the MAE, indicating that there are several larger prediction errors (outliers) in the test period that are pulling this metric up.
+Coefficient of Determination ($R^2$$R^2$ Score): -67.1577
+What it represents: The proportion of variance in the target variable that is predictable from the independent variables. A score of $1.0$$1.0$ represents a perfect fit, a score of $0$$0$ means the model performs only as well as predicting the historical mean, and a negative score means the model performs worse than simply guessing the mean.
+Implication: A highly negative R^2 of -67.16 indicates that the model completely fails to capture the target's variance during the test period and performs substantially worse than a flat-line average prediction.
+
+2. Key Findings & Why the XGBoost Model Failed
+
+Extrapolation and the Trend Problem: Like the Multivariate Linear Regression model, the XGBoost Regressor suffered because of non-stationarity. The target variable (TXNA) has a strong, persistent upward trend. Decision-tree-based models like XGBoost cannot extrapolate trends because they split on historical absolute thresholds. When faced with test data values that are higher than any values seen in the training dataset, XGBoost can only output the maximum value it learned during training. This explains why the prediction curve flatlines far below the actual values.
+Comparison to the Baseline: The Baseline Model (which simply carries the current value forward) remains the vastly superior model for this dataset ($R^2$$R^2$ of 0.56 and MAE of 41.89). It naturally respects the strong trend, whereas raw-value regression and tree models collapse under out-of-sample extrapolation.
